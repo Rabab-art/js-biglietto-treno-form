@@ -23,4 +23,33 @@ Facciamola solo se tutto il resto della logica è funzionante,
  classe senza stile e una da prendere come esempio per la parte visiva.
  Sentitevi liberi di personalizzare ulteriormente la grafica se vi va.*/
 
+//  1. Raccolgo il riferimento a tutti gli elementi che mi servono 
+//  della pagina;
+// 2. Lego al mio bottone un evento che farà cattare i miei calcoli 
+// al suo click; legarli un eventlister
 
+// ELEMETI DEL FORM
+
+var nameField = document.getElementById('name');
+var kmsField = document.getElementById('kms');
+var ageField = document.getElementById('age');
+var button = document.getElementById('generate-ticket')
+
+// ELEMENTI DELLA SEZIONE TICKET
+
+var passengerName = document.getElementById('passenger-name');
+var discountElement = document.getElementById('discount');
+var carElement = document.getElementById('car');
+var priceElement = document.getElementById('price');
+
+// LEGO UN EVENTO AL CLICK DEL MIO BOTTONE 
+button.addEventListener('click', function () {
+    // verifichimo se l'abbiamo messo bene con alert
+    // alert('clicchiamo');
+    // 
+    var nameValue = nameField.value;
+    console.log(nameValue);
+    var kmsValue = kmsField.value;
+    console.log(kmsValue);
+
+});

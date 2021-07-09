@@ -5,24 +5,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Treni Boolean</title>
 </head>
 
 <body>
-    <form action="/action_page.php">
-        <label for="fname">Inserisci il tuo nome:</label>
-        <input type="text" id="fname" name="fname"><br> <br>
-        <label for="kms">Lunghezza del tuo percoso:</label>
-        <input type="text" id="kms" name="lname"><br><br>
-        <p>La tua fascia di età:</p>
-        <select name='age'>
-            <option value='A'>Maggiorenne</option>
-            <option value='B'>Minorenne</option>
-            <option value='C'>Over65</option>
-        </select> <br><br>
+    <form>
+        <h2>Inserisci i tuoi dati di viaggio </h2>
+        <div>
+            <label for="name">Inserisci il tuo nome:</label>
+            <input type="text" class="fordm-field" id="name"> <br><br>
+        </div>
+        <div>
+            <label for="kms">Distanza percorsa in km:</label>
+            <input type="number" class="fordm-field" id="kms" min="10" step="2" value="10"><br>
+        </div> <br>
+        <div>
+            <label>Fascia d'età:</label>
+            <select id='age'>
+                <option>Maggiorenne</option>
+                <option>Minorenne</option>
+                <option>Over65</option>
+            </select> <br><br>
+        </div>
 
-        <input type="submit" value="Submit">
+        <div>
+            <button type="button" id="generate-ticket">Genera biglietto </button>
+        </div>
+
+        <input type="submit" value="Resetta">
     </form>
+    <hr>
+
+    <form id="ticket-section">
+        <h2>Il tuo biglietto </h2>
+
+        <label for="passenger-name">Inserisci il tuo nome: <span id="passenger-name"></span></label><br>
+        <label for="discount">Offerta: <span id="discount"></span> </label><br>
+        <label for="car">Carrozza: <span id="car"></span> </label><br>
+        <label for="train-code">Codice Treno: <span id="train.code">547896</span> </label><br>
+        <label for="price">Prezzo del Biglietto: <span id="price"></span></label><br>
+    </form>
+
+
 
 
     <script src="./js/script.js"></script>
