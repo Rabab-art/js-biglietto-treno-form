@@ -48,8 +48,39 @@ button.addEventListener('click', function () {
     // alert('clicchiamo');
     // 
     var nameValue = nameField.value;
-    console.log(nameValue);
+    // console.log(nameValue);
     var kmsValue = kmsField.value;
-    console.log(kmsValue);
+    // console.log(kmsValue);
+    var ageValue = ageField.value;
+    // console.log(ageValue);
 
+
+    // CALCOLO BIGLIETTO IN BASE AI KM
+
+    var price = 0.21 * kmsValue;
+    var discountDisplay = 'Triffa ordinaria '
+    // Verifico l'età: è minorenne;
+    if (ageValue === 'min') {
+        // applico lo sconto del 20%
+        price = price * 0.8;
+        //     la posso scrivere anche qui price *=0.8;
+        discountDisplay = 'Tariffa minori';
+    }
+    //  verifico l'età over 65
+    else if (ageValue === 'over65') {
+        // applico lo socnto del 40%
+        price *= 0.6;
+        discountDisplay = 'Tariffa over65';
+    }
+
+    // Arrotondiamo  e prepariamo il prezzo da stampare 
+    price = 'Euro' + price.toFixed(2);
+    // randomiziamo il numero della carozza
+    var carNumber = Math.floor(Math.random() * 12) + 1;
+
+    //    STAMPARE GLI ELEMENTI IN PAGINA
+    passengerName.innerHTML = nameField.value;
+    discountElement.innerHTML = discountDisplay;
+    carElement.innerHTML = carNumber;
+    priceElement.innerHTML = price;
 });
